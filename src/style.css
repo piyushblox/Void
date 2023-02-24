@@ -1,0 +1,549 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  html,
+  body {
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+    font-family: 'neue light', sans-serif;
+  }
+  
+  .webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    z-index: 9;  
+  }
+  
+  @font-face {
+    font-family: 'circular';
+    src: url(fonts/CircularStd-Book.otf);
+    font-style: normal;
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: 'helvetica';
+    src: url(fonts/HelveticaNowDisplay-Bold.ttf);
+    font-style: normal;
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: 'suisse';
+    src: url(fonts/Suisse.ttf);
+    font-style: normal;
+    font-weight: 100;
+  }
+  
+  @font-face {
+    font-family: 'monument regular';
+    src: url(fonts/MonumentExtended-Regular.otf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'aeonik';
+    src: url(fonts/AeonikProTRIAL-Regular.otf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  
+  @font-face {
+    font-family: 'grotsek';
+    src: url(fonts/Grotsek.ttf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'zephyr';
+    src: url(fonts/Zephyr.otf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'fksmooth';
+    src: url(fonts/FKSmooth.otf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'fkmono';
+    src: url(fonts/FKMono.otf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'fkmedium';
+    src: url(fonts/FKMedium.otf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'neue';
+    src: url(fonts/Neue.otf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'saol';
+    src: url(fonts/SaolDisplay.ttf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'saol light';
+    src: url(fonts/SaolLight.ttf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  @font-face {
+    font-family: 'neue light';
+    src: url(fonts/HelveticaNeue-Light.otf);
+    font-style: normal;
+    font-weight: 900;
+  }
+  
+  .section {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    color: #ffeded;
+    background-color: #090909;
+    font-size: 7vmin;
+  }
+  
+  section:nth-child(odd) {
+    justify-content: flex-end;
+  }
+  
+  
+  
+  .cursor {
+    height: 15px;
+    width: 15px;
+    border: 1.7px solid white;
+    border-radius: 50%;
+    position: absolute;
+    background-color: transparent;
+    z-index: 12;
+  }
+  
+  
+  /* 
+  .cursor:after {
+    content: "";
+    border-radius: 50px;
+    height: 10px;
+    transform: rotate(90deg);
+    width: 10px;
+    position: absolute;
+    color: white;
+    font-size: 15px;
+    font-family: 'aeonik', sans-serif;
+    z-index: 10;
+    top: 5px;
+    left: 5.5px;
+    transition: 0.3s;
+  
+  } */
+  
+  
+  #noise-bg {
+    height: 100%;
+    width: 100%;
+    opacity: 1.8%;
+    position: fixed;
+    filter: contrast(50%);
+    z-index: 10;
+    /* pointer-events:none; */
+  }
+  
+  
+  .navbar {
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 10;
+    position: fixed;
+    top: 2%;
+    left: 84.5%;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: #f5eee6;
+    font-weight: 800;
+    vertical-align: top;
+    font-family: 'neue light', sans-serif;
+    font-size: 20px;
+    margin: 20px 30px;
+    line-height: 12px;
+    /* text-transform: uppercase; */
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.3px;
+  }
+  
+  
+  .link-color {
+    color: #10ac84;
+    padding-right: 10px;
+    font-style: italic;
+    letter-spacing: 1px;
+    font-weight: 100;
+    font-size: 16px;
+    font-family: 'zephyr', sans-serif;
+  }
+  
+
+  .length {
+    font-family: 'neue light', sans-serif;
+    font-size: 100px;
+    position: absolute;
+    z-index: 10;
+    color:white;
+    left: 3%;
+    letter-spacing: -1px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    line-height:97px;
+  }
+
+  
+#lengthOne {
+    top: 30%;
+    left: 24%;
+    width: 800px;
+    color: #f5eee6;
+  }
+
+  .subHeaders {
+    position: relative;
+    font-size: 18px;
+    color: #f5eee6;
+    line-height: 22px;
+    z-index: 10;
+    font-family: 'neue light', sans-serif;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.3px;
+  }
+  
+  #subTwo {
+    position: fixed;
+    margin-left: 5%;
+    margin-top: 45.3%;
+    font-size: 13px;
+    width: 700px;
+  }
+
+  
+#subFour {
+    position: absolute;
+    margin-left: 2%;
+    margin-top: -43%;
+    font-family: 'neue light', sans-serif;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.3px;
+    font-size: 20px;
+    line-height: 26px;
+    width: 300px;
+    transition: 0.3s;
+  }
+
+  #subSeven {
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 20%;
+    font-family: 'neue light', sans-serif;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.3px;
+    font-size: 22px;
+    line-height: 28px;
+    width: 400px;
+    transition: 0.3s;
+  }
+
+  #subFive{
+    position: absolute;
+    margin-left: 47.5%;
+    margin-top: 11%;
+    font-family: 'aeonik', sans-serif;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.4px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #0a0a0a;
+    cursor: pointer;
+    background-color: white;
+    /* border:2px solid #090909; */
+
+    padding: 10px 23px;
+    transform: scale(0.9);
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+
+  #subSix{
+    position: absolute;
+    margin-left: 46.5%;
+    margin-top: 15%;
+    font-family: 'helvetica', sans-serif;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.1px;
+    font-size: 18px;
+    line-height: 28px;
+    word-spacing: 2px;
+    color:#090909;
+    background-color: white;
+    padding: 10px 22px;
+    transform: scale(1);
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+
+  .imgOne{
+    height: 20px;
+    width: auto;
+    position: absolute;
+    margin: -3px 0 0 10px;
+  }
+
+  .imgTwo{
+    height: 20px;
+    width: auto;
+    position: absolute;
+    margin: 2% 0 0 96%;
+    cursor: pointer;
+  }
+
+  .selection{
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    top:0;
+    background-color: #10ac84;
+    z-index: 10;
+    border-radius: 30px;
+    margin: 2.5% 5%;
+    transform: scale(0.7);
+    display: none;
+}
+
+.imgThree{
+    height: auto;
+    width: 50%;
+    position: absolute;
+    transform: scale(0.3);
+    margin: -4% 0 0 0;
+    /* cursor: pointer; */
+    border-radius: 30px;
+  }
+
+  
+.imgFour{
+    height: auto;
+    width: 50%;
+    position: absolute;
+    margin: -4% 0 0 50%;
+    /* cursor: pointer; */
+    transform: scale(0.3);
+    border-radius: 30px;
+  }
+
+  #subNine{
+    position: absolute;
+    margin-left: 12%;
+    margin-top:35%;
+    font-family: 'aeonik', sans-serif;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+    font-size: 25px;
+    line-height: 28px;
+    color: white;
+    cursor: pointer;
+    background-color: #013a2b;
+    /* border:2px solid #090909; */
+
+    padding: 25px 100px;
+    transform: scale(0.9);
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+
+  #subTen{
+    position: absolute;
+    margin-left: 65%;
+    margin-top:35%;
+    font-family: 'aeonik', sans-serif;
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;
+    font-size: 25px;
+    line-height: 28px;
+    color: white;
+    cursor: pointer;
+    background-color: #013a2b;
+    /* border:2px solid #090909; */
+
+    padding: 25px 100px;
+    transform: scale(0.9);
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+
+  #subEleven {
+    position: absolute;
+    margin-left: 36%;
+    margin-top: 4%;
+    font-family: 'aeonik', sans-serif;
+    /* text-transform: lowercase; */
+    color:#090909;
+    letter-spacing: 0.3px;
+    font-size: 28px;
+    line-height: 31px;
+    width: 600px;
+    transition: 0.3s;
+  }
+
+  #mySearch {
+    font-size: 16px;
+    padding: 14px 30px;
+    border: none;
+    position: absolute;
+    left: 38%;
+    top:2.5%;
+    width: 20%;
+    font-family: 'neue light',sans-serif;
+    border-radius: 50px;
+  }
+
+
+  #subTwelve {
+    position: absolute;
+    margin-top: -28%;
+    font-family: 'aeonik', sans-serif;
+    /* text-transform: lowercase; */
+    color:white;
+    letter-spacing: 0.1px;
+    font-size: 20px;
+    line-height: 31px;
+    width: 600px;
+    transition: 0.3s;
+  }
+
+  #subTwelve::before{
+    content: "Region";
+    position: absolute;
+    font-size: 15px;
+    top:-102%;
+    color:#8c8c8c;
+  }
+
+
+  
+  #subThirteen {
+    position: absolute;
+    margin-top: -28%;
+    font-family: 'aeonik', sans-serif;
+    /* text-transform: lowercase; */
+    color:white;
+    letter-spacing: 0.1px;
+    font-size: 20px;
+    line-height: 31px;
+    width: 600px;
+    transition: 0.3s;
+  }
+
+  #subThirteen::before{
+    content: "Animal";
+    position: absolute;
+    font-size: 15px;
+    top:-102%;
+    color:#8c8c8c;
+  }
+
+  #gen{
+    position: absolute;
+    margin-top: -29.5%;
+    font-family: 'aeonik', sans-serif;
+    /* text-transform: uppercase; */
+    letter-spacing: 0.1px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #0a0a0a;
+    cursor: pointer;
+    background-color: white;
+    /* border:2px solid #090909; */
+
+    padding: 10px 23px;
+    transform: scale(0.9);
+    border-radius: 50px;
+    transition: 0.3s;
+  }
+
+  .window{
+    height: 68vh;
+    width: 98%;
+    top:30%;
+    position: absolute;
+    border-radius: 30px;
+    background-color: #202020;
+  }
+
+  #subFourteen {
+    position: absolute;
+    margin-top: 0.6%;
+        font-family: 'aeonik', sans-serif;
+    /* text-transform: lowercase; */
+    color:#090909;
+    letter-spacing: 0.1px;
+    font-size: 10px;
+    line-height: 31px;
+    transition: 0.3s;
+    padding: 10px 25px;
+    border-radius: 50px;
+    background-color: #10ac84;
+  }
+
+  .temp{
+    position: absolute;
+    font-size: 100px;
+    color: grey;
+    font-family: 'neue light',sans-serif;
+    left: 32%;
+    top:54%;
+  }
+  .moisture{
+    position: absolute;
+    font-size: 100px;
+    color:orange;
+    font-family: 'neue light',sans-serif;
+    left: 47%;
+    top:54%;
+  }
+  .humidity{
+    position: absolute;
+    font-size: 100px;
+    color:#10ac84;
+    font-family: 'neue light',sans-serif;
+    left: 62%;
+    top:54%;
+  }

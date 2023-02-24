@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Void</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <canvas class="webgl"></canvas>
+    <section class="section" id="secOne">
+
+    <nav class="navbar">
+        <a href="#" data-replace="piycodes" style="position: fixed;left:3%;">
+
+            <span class="link-color"></span>
+            <span></span>
+        </a>
+
+
+        <a href="#" data-replace="WORK">
+
+            <span class="link-color"></span>
+            <span> Meet the team
+                <img src="/imgs/user.png" class="imgOne">
+            </span>
+        </a>
+        <!-- <a href="#" data-replace="contact" class="contact-attr">
+
+            <span class="link-color"></span>
+            <span> Contact </span>
+        </a> -->
+    </nav>
+
+    <h3 class="length" id="lengthOne">
+       We are <br>void.   </h3>
+       <!-- <h3 class="subHeaders" id="subSix">
+        Get Started
+      </h3> -->
+  
+
+        <h3 class="subHeaders" id="subFour">
+            Educate Yourself and Others About the Importance of Wildlife Conservation.
+        </h3>
+<h3 class="subHeaders" id="subFive">
+      Get started
+    </h3>
+
+        
+        <h3 class="subHeaders" id="subSeven" >
+</h3>
+            <h3 class="subHeaders" id="subTwo">
+        16.5131° N<br> 80.5165° E
+    </h3>
+
+ </section>
+
+    <div class="selection" id="open">
+        <h3 class="subHeaders" id="subEleven">
+            Select the conservation status.
+        </h3>
+        <img src="/imgs/close.png" class="imgTwo" id="close">
+
+        <img src="/imgs/tiger.png" class="imgThree">
+        <img src="/imgs/rhino.png" class="imgFour">
+        <a href="home.html"> <h3 class="subHeaders" id="subNine">
+          Endangered
+          </h3></a>
+          <a href="home.html">  <h3 class="subHeaders" id="subTen">
+            Extinct
+          </h3>
+          </a>
+
+    </div>
+
+    <script>
+var selection = document.getElementById("open");
+
+// Get the button that opens the selection
+var btn = document.getElementById("subFive");
+var close = document.getElementById("close")
+
+// When the user clicks on the button, open the selection
+btn.onclick = function() {
+  selection.style.display = "block";
+}
+
+close.onclick = function() {
+  selection.style.display = "none";
+}
+
+
+// When the user clicks anywhere outside of the selection, close it
+window.onclick = function(event) {
+  if (event.target == selection) {
+    selection.style.display = "none";
+  }
+}
+        </script>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
