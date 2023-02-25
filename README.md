@@ -7,3 +7,9 @@ The live data is  taken from the sensors which are placed in different red list 
 * Gsap
 * Three.js
 
+Project by - 
+Piyush Shahapurkar
+Amrit Kumar Singha
+Soha Muskaan
+Hema Poojitha
+
