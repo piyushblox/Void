@@ -1,7 +1,7 @@
 # Void - An IOT + Web2 integrated project developed specially for wild life conservation of Endangered and Endemic species
 
 
-The live data is  taken from the sensors which are placed in different red list zones and this data is analyzed with the survival conditions of a given spices. If the conditions are not favorable then those species are shifted to other regions.
+The live data is  taken from the sensors which are placed in different red list zones and this data is analyzed with the survival conditions of a given species. If the conditions are not favorable then those species are shifted to other regions.
 #
 
 ![web-1](https://user-images.githubusercontent.com/38778028/221409413-2caec32f-64d4-4d14-a864-f780c28a4d9a.png)
