@@ -3,7 +3,9 @@
 
 The live data is  taken from the sensors which are placed in different red list zones and this data is analyzed with the survival conditions of a given species. If the conditions are not favorable then those species are shifted to other regions.
 
-### This project won in the "Open Category" of 9Hacks conducted by the Next Tech Lab, SRM-AP
+### This project won in the "Open Category" of 9Hacks
+12 Hours hackathon conducted by Next Tech Lab, SRM-AP
+
 #
 
 ![web-1](https://user-images.githubusercontent.com/38778028/221409413-2caec32f-64d4-4d14-a864-f780c28a4d9a.png)
